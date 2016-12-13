@@ -1,0 +1,24 @@
+<div style="align-content:center" class="container">
+    <h1>Hello World!</h1>
+    <div class="row">
+        <div class="col-sm-1">&nbsp;</div>
+        <div class="col-sm-4">
+            <label>Enter Date:</label>
+            <input type="date" ng-bind="{{date}}" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1">&nbsp;</div>
+        <div class="col-sm-4">
+            Select available time slot
+            <table>
+                <tr ng-repeat="appointment in appointments">
+                    <td><button type="button" class="btn .btn-default" ng-click="openWindow()" style="width:100px">{{appointment.time}}</button></td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>

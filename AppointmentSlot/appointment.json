@@ -1,0 +1,26 @@
+﻿[  {
+  "date": "12/08/2017",
+  "time":  "9:00am",
+  "name": "falguni",
+  "phone": "4049109059",
+  "status": "true"
+}, {
+  "date": "12/08/2017",
+   "time":  "10:00am",
+  "name": "sonu",
+  "phone": "6787454994",
+  "status": "true"
+}, {
+  "date": "12/08/2017",
+   "time":  "11:00am",
+  "name": "",
+  "phone": "",
+  "status": "false"
+}, {
+  "date": "12/08/2017",
+  "time":  "12:00am",
+  "name": "",
+  "phone": "",
+  "status": "false"
+}
+]

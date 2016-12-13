@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-material.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/angular-ui-router.js"></script>
+    <script src="scripts/angular-modal-service.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/ngStorage.js"></script>
+
+    <!--Application Scripts-->
+    <!--<script src="app.js"></script>-->
+    <!--controllers-->
+    <script type="text/javascript" src="controller/scheduleCtrl.js"></script>
+    <!--<script src="controller/schedulePopupModalCtrl.js"></script>-->
+
+</head>
+<body ng-app="scheduleApp">
+    <div ng-controller="scheduleCtrl" style="align-content:center" class="container">
+        <h1>Welcome to appointment scheduler</h1>
+        <div>
+            <div>
+                Select available time slot<br />
+                <label>Enter Date:</label>
+                <input type="date" ng-bind="{{date}}" />
+                <input type="time" ng-bind="{{time}}" />
+            </div>
+
+            <form style="width:300px">
+                <table cellpadding="0" cellspacing="0" align="left">
+                    <tr ng-repeat="appointment in appointments" cellpadding="0" cellspacing="0">
+                        <td style="visibility:hidden">
+                            <input type="text" name="name" ng-model="appointment.name" class="form-control" height="0" style="visibility:hidden;height:0px" /><input type="text" name="phone" ng-model="appointment.phone" class="form-control" height="0" style="visibility:hidden;height:0px" />
+                            <input type="text" name="date" ng-model="appointment.date" class="form-control" height="0" style="visibility:hidden;height:0px" />
+                            <input type="text" name="time" ng-model="appointment.time" class="form-control" height="0" style="visibility:hidden;height:0px" />
+                            <input type="text" name="status" ng-model="appointment.status" class="form-control" style="visibility:hidden;height:0px" />
+                        </td>
+                        <td>
+                            <button ng-if="appointment.status == 'true'" type="button" class="btn .btn-default" style="background-color:red;width:200px;height:30px" ng-click="openWindow(appointment.name,appointment.phone,appointment.date,appointment.time,appointment.status)">{{appointment.date}}-{{appointment.time}}</button><button ng-if="appointment.status == 'false'" type="button" class="btn .btn-default" style="background-color:green;width:200px;height:30px" ng-click="openWindow(appointment.name,appointment.phone,appointment.date,appointment.time,appointment.status)">{{appointment.date}}-{{appointment.time}}</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
